@@ -36,7 +36,6 @@ export const getCommonConfig = () => {
             },
         },
         modules.loadBabel(),
-        // modules.loadTypeScript(),
         modules.defineEnvVariables(),
         modules.connectHtml(),
         modules.provideGlobals(),

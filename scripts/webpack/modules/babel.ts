@@ -2,7 +2,7 @@
 import { Configuration } from 'webpack';
 
 // Tools
-// import { nodeModulePath } from '../constants';
+import { nodeModulePath } from '../constants';
 
 
 export const loadBabel = (): Configuration => ({
@@ -31,6 +31,12 @@ export const loadBabel = (): Configuration => ({
                         },
                     },
                 ],
+            },
+            {
+                enforce: 'pre',
+                test:    /\.js$/,
+                loader:  'source-map-loader',
+                exclude: [ nodeModulePath('') ],
             },
         ],
     },
